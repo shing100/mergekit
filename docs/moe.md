@@ -27,7 +27,7 @@ experts:
 
 The script takes two arguments, an input config and an output path: `mergekit-moe ./config.yml ./my-clowncar-moe-12x180B`
 
-Currently the script can output models that use the Mixtral, Deepseek MoE, or Qwen MoE architectures. Some output architectures support a shared expert which will be activated for all tokens, which can be configured like this:
+Currently the script can output models that use the Mixtral, Deepseek MoE, Qwen MoE, or Qwen3 MoE architectures. Some output architectures support a shared expert which will be activated for all tokens, which can be configured like this:
 
 ```yml
 base_model: path/to/self_attn_donor
@@ -44,6 +44,7 @@ shared_experts:
 ```
 
 Currently only up to one shared expert is supported.
+The Qwen3 MoE architecture does not support shared experts.
 
 An appropriate architecture will be inferred based on the input models and presence or absence of shared experts in your configuration. Alternatively, you can explicitly specify an output architecture by setting the `architecture:` field in your config. For example:
 
